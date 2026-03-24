@@ -25,14 +25,21 @@ export default function Promo() {
         </motion.div>
       </div>
 
-      <h3 className="absolute top-12 right-6 text-white uppercase z-10 text-sm md:text-base lg:text-lg">
-        Анатомия возможностей
+      <h3 className="absolute top-12 right-6 text-white uppercase z-10 text-sm md:text-base lg:text-lg tracking-widest">
+        Интересные факты
       </h3>
 
-      <p className="absolute bottom-12 right-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl z-10">
-        Каждая секция — рамка для твоей истории. Формируй её, миксуй и позволь контенту
-        литься в неожиданные паттерны, заставляя листать дальше.
-      </p>
+      <div className="absolute bottom-12 left-6 right-6 z-10 flex flex-col gap-4 sm:gap-6 max-w-2xl">
+        <p className="text-white text-lg sm:text-xl md:text-2xl leading-snug">
+          Казанский Кремль — единственное место в мире, где рядом стоят мечеть и православный собор.
+        </p>
+        <p className="text-white/75 text-base sm:text-lg md:text-xl leading-snug">
+          Мечеть Марджани не закрывалась даже в советское время. Старо-Татарская слобода сохранила традиционные татарские дома.
+        </p>
+        <p className="text-white/60 text-sm sm:text-base leading-snug">
+          Казань — город, где Восток и Запад не просто соседствуют, а создают уникальный архитектурный диалог.
+        </p>
+      </div>
     </div>
   );
 }

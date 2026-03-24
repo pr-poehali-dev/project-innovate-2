@@ -1,22 +1,73 @@
 export default function Featured() {
+  const westFeatures = [
+    { label: "Симметрия и строгость форм" },
+    { label: "Колонны и купола" },
+    { label: "Европейская и христианская традиция" },
+  ];
+
+  const eastFeatures = [
+    { label: "Минареты и арочные своды" },
+    { label: "Орнаменты и узоры" },
+    { label: "Яркая декоративность" },
+  ];
+
+  const westBuildings = ["Благовещенский собор", "Богоявленский собор", "Дом Ушковой", "Дом печати", "Гостиный двор"];
+  const eastBuildings = ["Мечеть Кул-Шариф", "Мечеть Марджани", "Апанаевская мечеть", "Бурнаевская мечеть", "Нурулла-мечеть"];
+
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
-      <div className="flex-1 h-[400px] lg:h-[800px] mb-8 lg:mb-0 lg:order-2">
-        <img
-          src="/images/woman-horse.jpg"
-          alt="Woman on horse in countryside"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="flex-1 text-left lg:h-[800px] flex flex-col justify-center lg:mr-12 lg:order-1">
-        <h3 className="uppercase mb-4 text-sm tracking-wide text-neutral-600">Функции, которые не стоят на месте</h3>
-        <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
-          Не просто список возможностей — живые, дышащие акценты. Каждая функция адаптируется к движению, контексту и настроению,
-          оживляя продукт с первого взгляда.
-        </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Подробнее
-        </button>
+    <div id="west" className="min-h-screen bg-white">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-stretch">
+        <div className="flex-1 px-6 py-16 lg:py-24 lg:px-12 flex flex-col justify-center border-r border-neutral-100">
+          <h3 className="uppercase mb-4 text-xs tracking-widest text-neutral-400">Западная архитектура</h3>
+          <h2 className="text-3xl lg:text-5xl mb-8 text-neutral-900 leading-tight font-bold">
+            Европейский дух<br />в сердце Казани
+          </h2>
+          <p className="text-neutral-600 mb-8 leading-relaxed">
+            Связана с христианской и европейской культурой. Отличается симметрией, строгостью форм, величественными куполами и колоннадами.
+          </p>
+          <ul className="flex flex-col gap-3 mb-10">
+            {westFeatures.map((f) => (
+              <li key={f.label} className="flex items-center gap-3 text-neutral-700 text-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-neutral-800 shrink-0" />
+                {f.label}
+              </li>
+            ))}
+          </ul>
+          <div>
+            <h4 className="uppercase text-xs tracking-widest text-neutral-400 mb-3">Примеры зданий</h4>
+            <ul className="flex flex-col gap-2">
+              {westBuildings.map((b) => (
+                <li key={b} className="text-neutral-800 text-sm border-b border-neutral-100 pb-2">{b}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div id="east" className="flex-1 px-6 py-16 lg:py-24 lg:px-12 flex flex-col justify-center bg-neutral-950">
+          <h3 className="uppercase mb-4 text-xs tracking-widest text-neutral-500">Восточная архитектура</h3>
+          <h2 className="text-3xl lg:text-5xl mb-8 text-white leading-tight font-bold">
+            Исламская<br />душа Казани
+          </h2>
+          <p className="text-neutral-400 mb-8 leading-relaxed">
+            Связана с исламской и татарской культурой. Минареты, арабские орнаменты, яркие цвета и богатая декоративность создают неповторимый облик.
+          </p>
+          <ul className="flex flex-col gap-3 mb-10">
+            {eastFeatures.map((f) => (
+              <li key={f.label} className="flex items-center gap-3 text-neutral-300 text-sm">
+                <span className="w-1.5 h-1.5 rounded-full bg-neutral-300 shrink-0" />
+                {f.label}
+              </li>
+            ))}
+          </ul>
+          <div>
+            <h4 className="uppercase text-xs tracking-widest text-neutral-500 mb-3">Примеры зданий</h4>
+            <ul className="flex flex-col gap-2">
+              {eastBuildings.map((b) => (
+                <li key={b} className="text-neutral-300 text-sm border-b border-neutral-800 pb-2">{b}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
