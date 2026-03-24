@@ -11,8 +11,21 @@ export default function Featured() {
     { label: "Яркая декоративность" },
   ];
 
-  const westBuildings = ["Благовещенский собор", "Богоявленский собор", "Дом Ушковой", "Дом печати", "Гостиный двор"];
-  const eastBuildings = ["Мечеть Кул-Шариф", "Мечеть Марджани", "Апанаевская мечеть", "Бурнаевская мечеть", "Нурулла-мечеть"];
+  const westBuildings = [
+    { name: "Благовещенский собор", url: "https://ru.wikipedia.org/wiki/%D0%91%D0%BB%D0%B0%D0%B3%D0%BE%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_(%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C)" },
+    { name: "Богоявленский собор", url: "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B3%D0%BE%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BE%D0%B1%D0%BE%D1%80_(%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C)" },
+    { name: "Дом Ушковой", url: "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC_%D0%A3%D1%88%D0%BA%D0%BE%D0%B2%D0%BE%D0%B9" },
+    { name: "Дом печати", url: "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC_%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B8_(%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C)" },
+    { name: "Гостиный двор", url: "https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D1%8B%D0%B9_%D0%B4%D0%B2%D0%BE%D1%80_(%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C)" },
+  ];
+
+  const eastBuildings = [
+    { name: "Мечеть Кул-Шариф", url: "https://ru.wikipedia.org/wiki/%D0%9A%D1%83%D0%BB-%D0%A8%D0%B0%D1%80%D0%B8%D1%84_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)" },
+    { name: "Мечеть Марджани", url: "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9C%D0%B0%D1%80%D0%B4%D0%B6%D0%B0%D0%BD%D0%B8" },
+    { name: "Апанаевская мечеть", url: "https://ru.wikipedia.org/wiki/%D0%90%D0%BF%D0%B0%D0%BD%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C" },
+    { name: "Бурнаевская мечеть", url: "https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%80%D0%BD%D0%B0%D0%B5%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C" },
+    { name: "Нурулла-мечеть", url: "https://ru.wikipedia.org/wiki/%D0%9D%D1%83%D1%80%D1%83%D0%BB%D0%BB%D0%B0-%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C" },
+  ];
 
   return (
     <div id="west" className="min-h-screen bg-white">
@@ -37,7 +50,16 @@ export default function Featured() {
             <h4 className="uppercase text-xs tracking-widest text-neutral-400 mb-3">Примеры зданий</h4>
             <ul className="flex flex-col gap-2">
               {westBuildings.map((b) => (
-                <li key={b} className="text-neutral-800 text-sm border-b border-neutral-100 pb-2">{b}</li>
+                <li key={b.name} className="border-b border-neutral-100 pb-2">
+                  <a
+                    href={b.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-800 text-sm hover:text-neutral-500 transition-colors duration-200 underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-500"
+                  >
+                    {b.name}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
@@ -63,7 +85,16 @@ export default function Featured() {
             <h4 className="uppercase text-xs tracking-widest text-neutral-500 mb-3">Примеры зданий</h4>
             <ul className="flex flex-col gap-2">
               {eastBuildings.map((b) => (
-                <li key={b} className="text-neutral-300 text-sm border-b border-neutral-800 pb-2">{b}</li>
+                <li key={b.name} className="border-b border-neutral-800 pb-2">
+                  <a
+                    href={b.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-300 text-sm hover:text-white transition-colors duration-200 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-300"
+                  >
+                    {b.name}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
